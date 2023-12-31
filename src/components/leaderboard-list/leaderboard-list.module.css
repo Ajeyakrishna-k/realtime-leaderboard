@@ -6,4 +6,13 @@
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+  max-width: 30rem;
+  width: 100%;
+}
+
+.userList > li {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

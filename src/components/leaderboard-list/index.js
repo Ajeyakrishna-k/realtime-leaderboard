@@ -26,7 +26,7 @@ const UserList = () => {
       <LeaderboardHeader />
       <ul className={styles.userList}>
         {votesList.map((vote) => (
-          <motion.div
+          <motion.li
             key={vote.userId}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ const UserList = () => {
               userId={vote.userId}
               votes={vote.votes}
             />
-          </motion.div>
+          </motion.li>
         ))}
       </ul>
     </>

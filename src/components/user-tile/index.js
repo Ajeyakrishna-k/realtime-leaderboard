@@ -6,7 +6,7 @@ const UserTile = (props) => {
   const userDetails = getUserDetails(userId);
   const { name, profilePicUrl } = userDetails;
   return (
-    <li className={styles.userTile}>
+    <div className={styles.userTile}>
       <img
         src={profilePicUrl}
         alt={`Profile of ${name}`}
@@ -14,7 +14,7 @@ const UserTile = (props) => {
       />
       <h2 className={styles.userName}>{name}</h2>
       <p className={styles.userVotes}>{votes}</p>
-    </li>
+    </div>
   );
 };
 

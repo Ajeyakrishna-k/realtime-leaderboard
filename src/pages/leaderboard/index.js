@@ -1,5 +1,7 @@
+import UserList from "../../components/leaderboard-list";
+
 const Leaderboard = () => {
-  return <></>;
+  return <UserList />;
 };
 
 export default Leaderboard;

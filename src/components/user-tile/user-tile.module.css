@@ -37,3 +37,35 @@
   font-size: 0.9em;
   color: var(--secondary-text-color);
 }
+@media (max-width: 768px) {
+  .userTile {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .userTile {
+    gap: 1rem;
+  }
+  .userName {
+    width: 7rem;
+  }
+}
+@media (max-width: 480px) {
+  .userTile {
+    gap: 0.5rem;
+  }
+  .profilePic {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .userName {
+    font-size: 1em;
+    width: 5rem;
+  }
+
+  .userVotes {
+    font-size: 0.8em;
+  }
+}

@@ -4,6 +4,8 @@ import { generateRandomVotes } from "../../utils/randomVotes";
 import LeaderboardHeader from "../leaderboard-header";
 import UserTile from "../user-tile";
 import styles from "./leaderboard-list.module.css";
+import { motion } from "framer-motion";
+import { LIST_POLL_DURATION } from "../../constants/commons";
 
 const UserList = () => {
   const [votesList, setVotesList] = useState([]);
@@ -15,7 +17,7 @@ const UserList = () => {
       setVotesList(votes);
     };
     fetchVotes();
-    const interval = setInterval(fetchVotes, 5000);
+    const interval = setInterval(fetchVotes, LIST_POLL_DURATION);
     return () => clearInterval(interval);
   }, []);
 
@@ -24,7 +26,20 @@ const UserList = () => {
       <LeaderboardHeader />
       <ul className={styles.userList}>
         {votesList.map((vote) => (
-          <UserTile key={vote.userId} userId={vote.userId} votes={vote.votes} />
+          <motion.div
+            key={vote.userId}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            layout
+            transition={{ duration: 0.5 }}
+          >
+            <UserTile
+              key={vote.userId}
+              userId={vote.userId}
+              votes={vote.votes}
+            />
+          </motion.div>
         ))}
       </ul>
     </>

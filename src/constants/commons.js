@@ -1,0 +1,1 @@
+export const LIST_POLL_DURATION = 5000;
